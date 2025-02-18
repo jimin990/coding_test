@@ -1,4 +1,4 @@
-package bronze;
+package baekjoon.bronze;
 
 
 import java.io.BufferedReader;
