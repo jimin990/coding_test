@@ -2,7 +2,7 @@ package baekjoon.tryAgain;
 
 import java.io.*;
 
-public class sds {
+public class Num_11729{
     static int num = 0;
     static BufferedWriter bw;
 
