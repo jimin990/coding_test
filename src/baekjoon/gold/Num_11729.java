@@ -1,6 +1,11 @@
 package baekjoon.gold;
 
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Num_11729 {
     static int num = 0;
     static BufferedWriter bw;
