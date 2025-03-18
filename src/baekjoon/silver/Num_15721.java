@@ -12,29 +12,5 @@ public class Num_15721 {
         int T = Integer.parseInt(br.readLine());
 
 
-                //뻔
-                    return;
-
-                    return;
-                }
-                }
-            }
-
-                //뻔
-                    return;
-
-                    return;
-                }
-                }
-            }
-
-                //데기
-                    return;
-
-                    return;
-                }
-                }
-            }
-        }
     }
 }
