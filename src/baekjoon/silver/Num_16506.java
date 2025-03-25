@@ -105,6 +105,7 @@ public class Num_16506 {
 
             // 6~8
             sb.append(String.format("%03d",Integer.parseInt(Integer.toBinaryString(rD))));
+            
 
             // 9~11
             if (rA == 0) {
