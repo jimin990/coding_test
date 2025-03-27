@@ -1,10 +1,27 @@
-package baekjoon.tryAgain;
+package baekjoon.unsolved;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
 public class Num_31416 {
     public static void main(String[] args) throws IOException {
+
+        /**
+         * 4
+         * 3 3 7 5
+         * 2 3 5 7
+         * 3 2 7 5
+         *
+         * 10
+         *
+         * 4
+         *
+         * 12
+         *
+         * 3
+         *
+         * 2
+         */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -18,18 +35,26 @@ public class Num_31416 {
             int vA = Integer.parseInt(st.nextToken());
             int vB = Integer.parseInt(st.nextToken());
 
-            /**
-             * 상혁이가 할때 도훈이가 몇개 도와주는지를 코드로 작성해야한다.
-             */
+            if (tA * vA <= tB * vB) {
+                bw.write(String.valueOf(tB * vB));
+                bw.newLine();
+            } else {
+                int b = tB * vB;
+                int a=0;
 
-            int min =Integer.MAX_VALUE;
-            for (int j = 0; j < vA; j++) {
-                int max = Math.max(tA * (vA - j), (tB * vB) + (tA * j));
-                min = Math.min(min, max);
+                if(b>=0){
+
+                    b -=tA;
+                    a++;
+                }
+
+                vA-=a;
+
+
+
+                bw.write(String.valueOf(b));
+                bw.newLine();
             }
-
-            bw.write(String.valueOf(min));
-            bw.newLine();
         }
 
         bw.flush();
