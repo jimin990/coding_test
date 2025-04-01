@@ -1,4 +1,4 @@
-package baekjoon.unsolved;
+package baekjoon.bronze;
 
 import java.io.*;
 import java.util.Arrays;
