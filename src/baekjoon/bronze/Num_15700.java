@@ -13,6 +13,8 @@ public class Num_15700 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
+        //실패한 코드
+        //int result = ( N * M) / 2;
         long result = ((long) N * M) / 2;
 
         bw.write(String.valueOf(result));
