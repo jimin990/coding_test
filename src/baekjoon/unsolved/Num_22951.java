@@ -24,7 +24,7 @@ public class Num_22951 {
         for (int i = 1; i <= N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < K; j++) {
-                Integer card = Integer.valueOf(st.nextToken());
+                Integer card = Integer.parseInt(st.nextToken());
                 list.add(card);
                 map.put(card,i);
             }
@@ -36,14 +36,12 @@ public class Num_22951 {
 
             int card = list.get(location);
             list.remove(location);
-
-            card = (card % list.size()) -1;
-
-            location = card + location % list.size();
+            location = ((location + card) % list.size());
 
         }
-
-        bw.write(String.valueOf(location));
+        bw.write(String.valueOf(map.get(list.get(0))));
+        bw.write(" ");
+        bw.write(String.valueOf(list.get(0)));
         bw.flush();
         bw.close();
 
