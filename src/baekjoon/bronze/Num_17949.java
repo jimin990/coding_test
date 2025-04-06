@@ -14,6 +14,8 @@ public class Num_17949 {
 
         int N = Integer.parseInt(br.readLine());
 
+        
+
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         for (int i = 0; i < N; i++) {
