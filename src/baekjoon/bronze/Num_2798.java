@@ -25,14 +25,8 @@ public class Num_2798 {
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if(i==j){
-                    continue;
-                }
-                for (int k = 0; k < N; k++) {
-                    if(j==k||i==k){
-                        continue;
-                    }
+            for (int j = i+1; j < N; j++) {
+                for (int k = j+1; k < N; k++) {
                     int num = arr[i]+arr[j]+arr[k];
                     if(num<=M){
                         max = Math.max(max, num);
