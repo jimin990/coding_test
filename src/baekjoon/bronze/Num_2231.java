@@ -1,26 +1,37 @@
-package baekjoon.unsolved;
+package baekjoon.bronze;
 
 import java.io.*;
-import java.math.BigInteger;
 
-public class Num_27434 {
+public class Num_2231 {
     public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
 
-        BigInteger result = new BigInteger(String.valueOf(1));
+        int result = 0;
 
-        for (int i = N; i > 0; i--) {
-            BigInteger multiply = result.multiply(BigInteger.valueOf(i));
-            result = multiply;
+        for (int i = 1; i < N; i++) {
+            int sum = i;
+            int tmp = i;
+
+            while (tmp > 0) {
+                sum += tmp % 10;
+                tmp/=10;
+            }
+
+            if(sum == N){
+                result = i;
+                break;
+            }
+
         }
 
         bw.write(String.valueOf(result));
+
         bw.flush();
         bw.close();
     }
-
-
 }
+
