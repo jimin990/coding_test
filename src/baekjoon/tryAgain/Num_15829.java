@@ -1,5 +1,6 @@
 package baekjoon.tryAgain;
 
+/*
 import java.io.*;
 <<<<<<< HEAD
 
@@ -9,7 +10,8 @@ public class Num_15829 {
 import java.math.BigInteger;
 
 public class Num_15829 {
-    /*public static void main(String[] args) throws IOException {
+    */
+/*public static void main(String[] args) throws IOException {
 >>>>>>> 26a5c94 (48)
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -49,7 +51,8 @@ public class Num_15829 {
         bw.flush();
         bw.close();
 
-    }*/
+    }*//*
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -100,3 +103,4 @@ public class Num_15829 {
 }
 
 >>>>>>> 26a5c94 (48)
+*/

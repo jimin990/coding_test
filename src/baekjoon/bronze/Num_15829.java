@@ -1,5 +1,6 @@
 package baekjoon.bronze;
 
+/*
 import java.io.*;
 <<<<<<< HEAD
 =======
@@ -64,3 +65,4 @@ public class Num_15829 {
 >>>>>>> 26a5c94 (48)
     }
 }
+*/
