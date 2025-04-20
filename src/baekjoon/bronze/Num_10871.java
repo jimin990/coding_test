@@ -11,7 +11,9 @@ import java.io.InputStreamReader;
  * 끝까지 돌리고, 만약 x보다 큰 수 면 return
  */
 
-public class Num_10871 {
+public class
+
+Num_10871 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
