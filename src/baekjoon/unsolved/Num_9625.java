@@ -7,49 +7,29 @@ public class Num_9625 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(br.readLine());
-
-        //StringBuilder str =  new StringBuilder("A");
-
-        String str = "A";
+        int K = Integer.parseInt(br.readLine());
 
 
+        if(K == 1){
+            bw.write("0 1");
+        }else{
 
-        for (int i = 1; i <=N; i++) {
+            int[] A = new int[K+1];
+            int[] B = new int[K+1];
+            A[1] = 0;
+            A[2] = 1;
 
-            //StringBuilder sB = new StringBuilder();
+            B[1] = 1;
+            B[2] = 1;
 
-            String sB ="";
-            for (int j = 0; j < str.length(); j++) {
-                if(str.charAt(j) == 'A'){
-                    sB = sB.concat("B");
-                }else{
-                    sB = sB.concat("BA");
-                }
+            for (int i = 3; i <= K; i++) {
+                A[i] = A[i-1] + A[i-2];
+                B[i] = B[i-1] + B[i-2];
             }
 
-            /*str.setLength(0);
-            str.append(sB);*/
-
-            str = sB;
-
+            bw.write(A[K] + " " + B[K]);
         }
 
-        int A = 0;
-        int B = 0;
-
-        for (int i = 0; i < str.length(); i++) {
-
-            char c = str.charAt(i);
-
-            if(c == 'A'){
-                A++;
-            }else{
-                B++;
-            }
-        }
-
-        bw.write(A + " " + B);
         bw.flush();
         bw.close();
     }
