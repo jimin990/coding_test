@@ -1,4 +1,4 @@
-package baekjoon.unsolved;
+package baekjoon.silver;
 
 import java.io.*;
 
