@@ -5,55 +5,96 @@ import java.io.*;
 public class Num_4659 {
     public static void main(String[] args) throws IOException {
 
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        loop1:while(true){
+        while(true){
 
             String str = br.readLine();
 
-            String mo = "a,e,i,o,u";
 
-
-            // end
             if (str.equals("end")) {
                 bw.flush();
                 bw.close();
                 return;
             }else{
-                // 1
-                if(str.contains("a") || str.contains("e") ||str.contains("i") ||str.contains("o") ||str.contains("u")){
-                    // 2
-
-                    for (int i = 2; i < str.length(); i++) {
-                        if(mo.contains(String.valueOf(str.charAt(i-2))) && mo.contains(String.valueOf(str.charAt(i-1))) && mo.contains(String.valueOf(str.charAt(i))) || (!mo.contains(String.valueOf(str.charAt(i-2))) && !mo.contains(String.valueOf(str.charAt(i-1))) && !mo.contains(String.valueOf(str.charAt(i))))){
-                            bw.write("<" + str + ">" + " is not acceptable");
-                            bw.newLine();
-                            continue loop1;
-                        }
-                    }
-
-                    for (int i = 1; i < str.length(); i++) {
-                        if(str.charAt(i-1) == str.charAt(i)){
-                            if(!(str.charAt(i)== 'e') || !(str.charAt(i)== 'o')){
-                                bw.write("<" + str + ">" + " is not acceptable");
-                                bw.newLine();
-                                continue loop1;
-                            }
-                        }
-                    }
-
-                }else{
-                    bw.write("<" + str + ">" + " is not acceptable");
+                if(one(str) && two(str) && three(str)){
+                    bw.write("<" + str + ">" + " is acceptable.");
                     bw.newLine();
-                    continue;
+                }else{
+                    bw.write("<" + str + ">" + " is not acceptable.");
+                    bw.newLine();
                 }
             }
 
-            bw.write("<" + str + ">" + " is acceptable");
-            bw.newLine();
+
 
         }
+    }
+
+    public static boolean one(String str){
+
+        String test = "aeiou";
+
+        for (int i = 0; i < test.length(); i++) {
+            if(str.contains(String.valueOf(test.charAt(i)))){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean two(String str){
+
+        String test = "aeiou";
+
+        if(str.length() <3) return true;
+
+        int con = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(test.contains(String.valueOf(str.charAt(i)))){
+                con++;
+            }else{
+                con=0;
+            }
+
+            if(con == 3){
+                return false;
+            }
+        }
+
+        con = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(!test.contains(String.valueOf(str.charAt(i)))){
+                con++;
+            }else{
+                con=0;
+            }
+
+            if(con == 3){
+                return false;
+            }
+        }
+
+
+        return true;
+    }
+
+    public static boolean three(String str){
+
+        if(str.length() < 2){
+            return true;
+        }
+
+        for (int i = 1; i < str.length(); i++) {
+            if(str.charAt(i-1) == str.charAt(i)){
+                if(!(str.charAt(i) == 'e') && !(str.charAt(i) == 'o')){
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
