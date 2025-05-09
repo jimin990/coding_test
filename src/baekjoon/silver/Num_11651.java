@@ -13,34 +13,30 @@ public class Num_11651 {
 
         int N = Integer.parseInt(br.readLine());
 
-        Xy[] arr = new Xy[N];
+        int[][] arr = new int[N][2];
 
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
 
-            Xy xy = new Xy();
-
-            xy.x = Integer.parseInt(st.nextToken());
-            xy.y = Integer.parseInt(st.nextToken());
-
-            arr[i] = xy;
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = Integer.parseInt(st.nextToken());
 
         }
 
-        Arrays.sort(arr, new Comparator<Xy>() {
+        Arrays.sort(arr, new Comparator<int[]>() {
             @Override
-            public int compare(Xy o1, Xy o2) {
-
-                if(o1.y == o2.y){
-                    return o1.x-o2.x;
+            public int compare(int[] o1, int[] o2) {
+                if(o1[1] == o2[1]){
+                    return o1[0]-o2[0];
                 }else{
-                    return o1.y - o2.y;
+                    return o1[1]-o2[1];
                 }
+
             }
         });
 
-        for (Xy xy : arr) {
-            bw.write(xy.x + " " + xy.y);
+        for (int[] a : arr) {
+            bw.write(a[0] + " " + a[1]);
             bw.newLine();
         }
         bw.flush();
@@ -48,9 +44,4 @@ public class Num_11651 {
     }
 
 
-}
-
-class Xy{
-    int x;
-    int y;
 }
